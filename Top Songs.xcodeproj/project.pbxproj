@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		925F913B1CDE59E200E7B133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F913A1CDE59E200E7B133 /* main.m */; };
+		925F913E1CDE59E200E7B133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F913D1CDE59E200E7B133 /* AppDelegate.m */; };
+		925F91471CDE59E200E7B133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925F91451CDE59E200E7B133 /* Main.storyboard */; };
+		925F91491CDE59E200E7B133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925F91481CDE59E200E7B133 /* Assets.xcassets */; };
+		925F914C1CDE59E200E7B133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925F914A1CDE59E200E7B133 /* LaunchScreen.storyboard */; };
+		925F91571CDE644600E7B133 /* MSNewsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F91561CDE644600E7B133 /* MSNewsTVC.m */; };
+		925F915A1CDE649800E7B133 /* MSFavoritesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F91591CDE649800E7B133 /* MSFavoritesTVC.m */; };
+		925F915D1CDE64C500E7B133 /* MSAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F915C1CDE64C500E7B133 /* MSAboutVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		925F91361CDE59E200E7B133 /* Top Songs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Songs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		925F913A1CDE59E200E7B133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		925F913C1CDE59E200E7B133 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		925F913D1CDE59E200E7B133 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		925F91461CDE59E200E7B133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		925F91481CDE59E200E7B133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		925F914B1CDE59E200E7B133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		925F914D1CDE59E200E7B133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		925F91551CDE644600E7B133 /* MSNewsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNewsTVC.h; path = ViewController/MSNewsTVC.h; sourceTree = "<group>"; };
+		925F91561CDE644600E7B133 /* MSNewsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSNewsTVC.m; path = ViewController/MSNewsTVC.m; sourceTree = "<group>"; };
+		925F91581CDE649800E7B133 /* MSFavoritesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSFavoritesTVC.h; path = ViewController/MSFavoritesTVC.h; sourceTree = "<group>"; };
+		925F91591CDE649800E7B133 /* MSFavoritesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSFavoritesTVC.m; path = ViewController/MSFavoritesTVC.m; sourceTree = "<group>"; };
+		925F915B1CDE64C500E7B133 /* MSAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSAboutVC.h; path = ViewController/MSAboutVC.h; sourceTree = "<group>"; };
+		925F915C1CDE64C500E7B133 /* MSAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSAboutVC.m; path = ViewController/MSAboutVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		925F91331CDE59E200E7B133 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		925F912D1CDE59E200E7B133 = {
+			isa = PBXGroup;
+			children = (
+				925F91381CDE59E200E7B133 /* Top Songs */,
+				925F91371CDE59E200E7B133 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		925F91371CDE59E200E7B133 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				925F91361CDE59E200E7B133 /* Top Songs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		925F91381CDE59E200E7B133 /* Top Songs */ = {
+			isa = PBXGroup;
+			children = (
+				925F91541CDE63F100E7B133 /* Models */,
+				925F91531CDE63D000E7B133 /* ViewController */,
+				925F913C1CDE59E200E7B133 /* AppDelegate.h */,
+				925F913D1CDE59E200E7B133 /* AppDelegate.m */,
+				925F91451CDE59E200E7B133 /* Main.storyboard */,
+				925F91481CDE59E200E7B133 /* Assets.xcassets */,
+				925F914A1CDE59E200E7B133 /* LaunchScreen.storyboard */,
+				925F914D1CDE59E200E7B133 /* Info.plist */,
+				925F91391CDE59E200E7B133 /* Supporting Files */,
+			);
+			path = "Top Songs";
+			sourceTree = "<group>";
+		};
+		925F91391CDE59E200E7B133 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				925F913A1CDE59E200E7B133 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		925F91531CDE63D000E7B133 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				925F91551CDE644600E7B133 /* MSNewsTVC.h */,
+				925F91561CDE644600E7B133 /* MSNewsTVC.m */,
+				925F91581CDE649800E7B133 /* MSFavoritesTVC.h */,
+				925F91591CDE649800E7B133 /* MSFavoritesTVC.m */,
+				925F915B1CDE64C500E7B133 /* MSAboutVC.h */,
+				925F915C1CDE64C500E7B133 /* MSAboutVC.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		925F91541CDE63F100E7B133 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		925F91351CDE59E200E7B133 /* Top Songs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 925F91501CDE59E200E7B133 /* Build configuration list for PBXNativeTarget "Top Songs" */;
+			buildPhases = (
+				925F91321CDE59E200E7B133 /* Sources */,
+				925F91331CDE59E200E7B133 /* Frameworks */,
+				925F91341CDE59E200E7B133 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Top Songs";
+			productName = "iTunes News";
+			productReference = 925F91361CDE59E200E7B133 /* Top Songs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		925F912E1CDE59E200E7B133 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Maksym Savisko";
+				TargetAttributes = {
+					925F91351CDE59E200E7B133 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4KQC9K68AM;
+					};
+				};
+			};
+			buildConfigurationList = 925F91311CDE59E200E7B133 /* Build configuration list for PBXProject "Top Songs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 925F912D1CDE59E200E7B133;
+			productRefGroup = 925F91371CDE59E200E7B133 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				925F91351CDE59E200E7B133 /* Top Songs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		925F91341CDE59E200E7B133 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925F914C1CDE59E200E7B133 /* LaunchScreen.storyboard in Resources */,
+				925F91491CDE59E200E7B133 /* Assets.xcassets in Resources */,
+				925F91471CDE59E200E7B133 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		925F91321CDE59E200E7B133 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925F91571CDE644600E7B133 /* MSNewsTVC.m in Sources */,
+				925F915D1CDE64C500E7B133 /* MSAboutVC.m in Sources */,
+				925F913E1CDE59E200E7B133 /* AppDelegate.m in Sources */,
+				925F913B1CDE59E200E7B133 /* main.m in Sources */,
+				925F915A1CDE649800E7B133 /* MSFavoritesTVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		925F91451CDE59E200E7B133 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				925F91461CDE59E200E7B133 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		925F914A1CDE59E200E7B133 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				925F914B1CDE59E200E7B133 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		925F914E1CDE59E200E7B133 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		925F914F1CDE59E200E7B133 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		925F91511CDE59E200E7B133 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Top Songs/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MSavisko.Top-Songs";
+				PRODUCT_NAME = "Top Songs";
+			};
+			name = Debug;
+		};
+		925F91521CDE59E200E7B133 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Top Songs/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MSavisko.Top-Songs";
+				PRODUCT_NAME = "Top Songs";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		925F91311CDE59E200E7B133 /* Build configuration list for PBXProject "Top Songs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				925F914E1CDE59E200E7B133 /* Debug */,
+				925F914F1CDE59E200E7B133 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		925F91501CDE59E200E7B133 /* Build configuration list for PBXNativeTarget "Top Songs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				925F91511CDE59E200E7B133 /* Debug */,
+				925F91521CDE59E200E7B133 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 925F912E1CDE59E200E7B133 /* Project object */;
+}
