@@ -3,5 +3,4 @@ target 'Top Songs' do
   platform :ios, '8.0'
 
   pod 'AFNetworking', '~> 3.0'
-  pod 'XMLDictionary', '~> 1.4'
 end

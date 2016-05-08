@@ -8,7 +8,6 @@
 
 #import "MSNewsTVC.h"
 
-#import "XMLDictionary.h"
 #import "AFNetworking.h"
 
 @interface MSNewsTVC () <NSXMLParserDelegate>
