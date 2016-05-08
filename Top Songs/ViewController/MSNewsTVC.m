@@ -84,8 +84,8 @@
     else if ([elementName isEqualToString:@"im:releaseDate"]){
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"releaseDate"];
     }
-    else if ([elementName isEqualToString:@"im:image height='55'"]){
-        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"updated"];
+    else if ([elementName isEqualToString:@"im:image"]){
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"urlImage"];
     }
     
     [self.foundValue setString:@""];
@@ -94,7 +94,7 @@
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     if ([self.currentElement isEqualToString:@"title"] ||
         [self.currentElement isEqualToString:@"im:releaseDate"] ||
-        [self.currentElement isEqualToString:@"im:image height='55'"]) {
+        [self.currentElement isEqualToString:@"im:image"]) {
         
         if (![string isEqualToString:@"\n"]) {
             [self.foundValue appendString:string];
