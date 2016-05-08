@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ED07DF298ABF2B3CDD719F98'
-               BlueprintName = 'Pods-Top Songs'
+               BlueprintIdentifier = 'A329B55D58F81B52C3F7D7FC'
+               BlueprintName = 'XMLDictionary'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-Top Songs.a'>
+               BuildableName = 'libXMLDictionary.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
