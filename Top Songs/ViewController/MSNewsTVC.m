@@ -11,7 +11,13 @@
 #import "XMLDictionary.h"
 #import "AFNetworking.h"
 
-@interface MSNewsTVC ()
+@interface MSNewsTVC () <NSXMLParserDelegate>
+@property (strong, nonatomic) NSXMLParser *xmlParser;
+@property (strong, nonatomic) NSMutableArray *arrNewsData;
+@property (strong, nonatomic) NSMutableDictionary *dictTempDataStorage;
+@property (strong, nonatomic) NSMutableString *foundValue;
+@property (strong, nonatomic) NSString *currentElement;
+
 @end
 
 @implementation MSNewsTVC
@@ -33,12 +39,68 @@
     
     [manager GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //Success
-        NSDictionary *d0 = [NSDictionary dictionaryWithXMLParser:(NSXMLParser*)responseObject];
-        NSLog(@"Resonse object: %@", (NSXMLParser*)responseObject);
+        self.xmlParser = [[NSXMLParser alloc] init];
+        self.xmlParser = (NSXMLParser*)responseObject;
+        self.xmlParser.delegate = self;
+        self.foundValue = [[NSMutableString alloc] init];
+        [self.xmlParser parse];
+        NSLog(@"Array: %@", self.arrNewsData);
+        //NSDictionary *d0 = [NSDictionary dictionaryWithXMLParser:(NSXMLParser*)responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //Fail
         NSLog(@"Error: %@", error);
     }];
 }
+
+#pragma mark - NSXMLParserDelegate
+-(void)parserDidStartDocument:(NSXMLParser *)parser {
+    self.arrNewsData = [[NSMutableArray alloc] init];
+}
+
+-(void)parserDidEndDocument:(NSXMLParser *)parser {
+    [self.tableView reloadData];
+}
+
+-(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"%@", [parseError localizedDescription]);
+}
+
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    
+    if ([elementName isEqualToString:@"entry"]) {
+        self.dictTempDataStorage = [[NSMutableDictionary alloc] init];
+    }
+    self.currentElement = elementName;
+}
+
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
+    if ([elementName isEqualToString:@"entry"]) {
+        [self.arrNewsData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
+    }
+    else if ([elementName isEqualToString:@"title"]){
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"title"];
+    }
+    else if ([elementName isEqualToString:@"im:releaseDate"]){
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"releaseDate"];
+    }
+    else if ([elementName isEqualToString:@"im:image height='55'"]){
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"updated"];
+    }
+    
+    [self.foundValue setString:@""];
+}
+
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    if ([self.currentElement isEqualToString:@"title"] ||
+        [self.currentElement isEqualToString:@"im:releaseDate"] ||
+        [self.currentElement isEqualToString:@"im:image height='55'"]) {
+        
+        if (![string isEqualToString:@"\n"]) {
+            [self.foundValue appendString:string];
+        }
+    }
+}
+
 
 @end
