@@ -19,6 +19,10 @@
         _price = dict[@"songPrice"];
         _url = [[NSURL alloc]initWithString:dict[@"url"]];
         _imageUrl = [[NSURL alloc]initWithString:dict[@"imageUrl"]];
+        
+        
+        NSString *name = [_title substringToIndex:[_title length] - [_artist length]];
+        _name = name;
     }
     return self;
 }

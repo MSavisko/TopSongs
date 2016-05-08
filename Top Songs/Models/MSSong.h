@@ -10,6 +10,7 @@
 
 @interface MSSong : NSObject
 @property (strong, readonly, nonatomic) NSString *artist;
+@property (strong, readonly, nonatomic) NSString *name;
 @property (strong, readonly, nonatomic) NSString *title;
 @property (strong, readonly, nonatomic) NSString *collectionName;
 @property (strong, readonly, nonatomic) NSString *releaseDate;
