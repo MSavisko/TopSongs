@@ -90,13 +90,16 @@
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"collectionName"];
     }
     else if ([elementName isEqualToString:@"im:image"]){
-        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"urlImage"];
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"imageUrl"];
     }
     else if ([elementName isEqualToString:@"im:artist"]) {
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"artist"];
     }
     else if ([elementName isEqualToString:@"im:price"]) {
-        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"price"];
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"songPrice"];
+    }
+    else if ([elementName isEqualToString:@"id"]) {
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"url"];
     }
     [self.foundValue setString:@""];
 }
