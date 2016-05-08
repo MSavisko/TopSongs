@@ -45,7 +45,6 @@
         self.foundValue = [[NSMutableString alloc] init];
         [self.xmlParser parse];
         NSLog(@"Array: %@", self.arrNewsData);
-        //NSDictionary *d0 = [NSDictionary dictionaryWithXMLParser:(NSXMLParser*)responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //Fail
         NSLog(@"Error: %@", error);
