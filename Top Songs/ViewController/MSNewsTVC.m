@@ -53,27 +53,28 @@
 }
 
 #pragma mark - NSXMLParserDelegate
--(void)parserDidStartDocument:(NSXMLParser *)parser {
+-(void) parserDidStartDocument:(NSXMLParser *)parser {
     self.arrNewsData = [[NSMutableArray alloc] init];
 }
 
--(void)parserDidEndDocument:(NSXMLParser *)parser {
+-(void) parserDidEndDocument:(NSXMLParser *)parser {
     [self.tableView reloadData];
 }
 
--(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+-(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     NSLog(@"%@", [parseError localizedDescription]);
 }
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+-(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     
+    [self.foundValue setString:@""];
     if ([elementName isEqualToString:@"entry"]) {
         self.dictTempDataStorage = [[NSMutableDictionary alloc] init];
     }
     self.currentElement = elementName;
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+-(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ([elementName isEqualToString:@"entry"]) {
         [self.arrNewsData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
@@ -82,24 +83,26 @@
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"title"];
     }
     else if ([elementName isEqualToString:@"im:releaseDate"]){
-        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"releaseDate"];
+        NSString *shortenDate = [self.foundValue substringToIndex:10];
+        [self.dictTempDataStorage setObject:[NSString stringWithString:shortenDate] forKey:@"releaseDate"];
+    }
+    else if ([elementName isEqualToString:@"im:name"]) {
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"collectionName"];
     }
     else if ([elementName isEqualToString:@"im:image"]){
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"urlImage"];
     }
-    
+    else if ([elementName isEqualToString:@"im:artist"]) {
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"artist"];
+    }
+    else if ([elementName isEqualToString:@"im:price"]) {
+        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"price"];
+    }
     [self.foundValue setString:@""];
 }
 
--(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-    if ([self.currentElement isEqualToString:@"title"] ||
-        [self.currentElement isEqualToString:@"im:releaseDate"] ||
-        [self.currentElement isEqualToString:@"im:image"]) {
-        
-        if (![string isEqualToString:@"\n"]) {
-            [self.foundValue appendString:string];
-        }
-    }
+-(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    [self.foundValue appendString:string];
 }
 
 
