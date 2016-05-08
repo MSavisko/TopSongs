@@ -17,4 +17,6 @@
 @property (strong, readonly, nonatomic) NSURL *url;
 @property (strong, readonly, nonatomic) NSURL *imageUrl;
 
+- (instancetype) initWithDict:(NSDictionary*)dict;
+
 @end

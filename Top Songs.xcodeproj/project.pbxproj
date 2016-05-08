@@ -16,7 +16,7 @@
 		925F915A1CDE649800E7B133 /* MSFavoritesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F91591CDE649800E7B133 /* MSFavoritesTVC.m */; };
 		925F915D1CDE64C500E7B133 /* MSAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F915C1CDE64C500E7B133 /* MSAboutVC.m */; };
 		925F91601CDF9FB600E7B133 /* MSSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F915F1CDF9FB600E7B133 /* MSSong.m */; };
-		925F91631CDFC26900E7B133 /* MSDetailSongsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F91621CDFC26900E7B133 /* MSDetailSongsVC.m */; };
+		925F91691CDFCF2100E7B133 /* MSSongDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F91681CDFCF2100E7B133 /* MSSongDetailTVC.m */; };
 		974C7AE6D569CE2E9E5B5C54 /* libPods-Top Songs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C04921BE3625F4EA969F08A /* libPods-Top Songs.a */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +40,8 @@
 		925F915C1CDE64C500E7B133 /* MSAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSAboutVC.m; path = ViewController/MSAboutVC.m; sourceTree = "<group>"; };
 		925F915E1CDF9FB600E7B133 /* MSSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSong.h; path = Models/MSSong.h; sourceTree = "<group>"; };
 		925F915F1CDF9FB600E7B133 /* MSSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSong.m; path = Models/MSSong.m; sourceTree = "<group>"; };
-		925F91611CDFC26900E7B133 /* MSDetailSongsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDetailSongsVC.h; path = ViewController/MSDetailSongsVC.h; sourceTree = "<group>"; };
-		925F91621CDFC26900E7B133 /* MSDetailSongsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDetailSongsVC.m; path = ViewController/MSDetailSongsVC.m; sourceTree = "<group>"; };
+		925F91671CDFCF2100E7B133 /* MSSongDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSongDetailTVC.h; path = ViewController/MSSongDetailTVC.h; sourceTree = "<group>"; };
+		925F91681CDFCF2100E7B133 /* MSSongDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSongDetailTVC.m; path = ViewController/MSSongDetailTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 			children = (
 				925F91551CDE644600E7B133 /* MSNewsTVC.h */,
 				925F91561CDE644600E7B133 /* MSNewsTVC.m */,
-				925F91611CDFC26900E7B133 /* MSDetailSongsVC.h */,
-				925F91621CDFC26900E7B133 /* MSDetailSongsVC.m */,
+				925F91671CDFCF2100E7B133 /* MSSongDetailTVC.h */,
+				925F91681CDFCF2100E7B133 /* MSSongDetailTVC.m */,
 				925F91581CDE649800E7B133 /* MSFavoritesTVC.h */,
 				925F91591CDE649800E7B133 /* MSFavoritesTVC.m */,
 				925F915B1CDE64C500E7B133 /* MSAboutVC.h */,
@@ -261,9 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925F91631CDFC26900E7B133 /* MSDetailSongsVC.m in Sources */,
 				925F91601CDF9FB600E7B133 /* MSSong.m in Sources */,
 				925F91571CDE644600E7B133 /* MSNewsTVC.m in Sources */,
+				925F91691CDFCF2100E7B133 /* MSSongDetailTVC.m in Sources */,
 				925F915D1CDE64C500E7B133 /* MSAboutVC.m in Sources */,
 				925F913E1CDE59E200E7B133 /* AppDelegate.m in Sources */,
 				925F913B1CDE59E200E7B133 /* main.m in Sources */,

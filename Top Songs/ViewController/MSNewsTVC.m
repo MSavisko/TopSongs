@@ -7,6 +7,9 @@
 //
 
 #import "MSNewsTVC.h"
+#import "MSSongDetailTVC.h"
+
+#import "MSSong.h"
 
 #import "AFNetworking.h"
 
@@ -21,10 +24,17 @@
 @end
 
 @implementation MSNewsTVC
-#pragma mark - UIViewController
+#pragma mark - UITableViewController
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self loadSongsList];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    MSSong *song = [[MSSong alloc]initWithDict:self.arrNewsData[indexPath.row]];
+    MSSongDetailTVC *detailTVC = segue.destinationViewController;
+    detailTVC.song = song;
 }
 
 #pragma mark - Helper Methods

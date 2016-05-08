@@ -1,5 +1,5 @@
 //
-//  MSDetailSongsVC.h
+//  MSSongDetailTVC.h
 //  Top Songs
 //
 //  Created by Maksym Savisko on 5/8/16.
@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSSong.h"
 
-@interface MSDetailSongsVC : UIViewController
+@interface MSSongDetailTVC : UITableViewController
+@property (strong, nonatomic) MSSong *song;
 
 @end
