@@ -8,6 +8,20 @@
 
 #import "MSNewsTVC.h"
 
+@interface MSNewsTVC ()
+@end
+
 @implementation MSNewsTVC
+#pragma mark - UIViewController
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    [self loadSongsList];
+}
+
+
+#pragma mark - Helper Methods
+- (void) loadSongsList {
+    
+}
 
 @end
