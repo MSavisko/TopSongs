@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 
 @interface MSNewsTVC () <NSXMLParserDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *newsTableView;
 @property (strong, nonatomic) NSXMLParser *xmlParser;
 @property (strong, nonatomic) NSMutableArray *arrNewsData;
 @property (strong, nonatomic) NSMutableDictionary *dictTempDataStorage;
@@ -26,14 +27,12 @@
     [self loadSongsList];
 }
 
-
 #pragma mark - Helper Methods
 - (void) loadSongsList {
     NSURL *url = [NSURL URLWithString:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
-    
     manager.responseSerializer.acceptableContentTypes =  [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/atom+xml"];
     
     [manager GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -50,13 +49,36 @@
     }];
 }
 
+#pragma mark - UITableViewDataSource
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrNewsData.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NewsCell"];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    cell.textLabel.text = [[self.arrNewsData objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.detailTextLabel.text = [[self.arrNewsData objectAtIndex:indexPath.row] objectForKey:@"releaseDate"];
+    
+    return cell;
+}
+
 #pragma mark - NSXMLParserDelegate
 -(void) parserDidStartDocument:(NSXMLParser *)parser {
     self.arrNewsData = [[NSMutableArray alloc] init];
 }
 
 -(void) parserDidEndDocument:(NSXMLParser *)parser {
-    [self.tableView reloadData];
+    [self.newsTableView reloadData];
 }
 
 -(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {

@@ -14,13 +14,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="A2X-ps-r56">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" textLabel="cfh-hO-hyF" detailTextLabel="ttR-bB-J7T" style="IBUITableViewCellStyleSubtitle" id="A2X-ps-r56">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2X-ps-r56" id="44K-AI-r8h">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cfh-hO-hyF">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ttR-bB-J7T">
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Deh-dZ-Gdz" kind="show" id="iVc-c5-eT0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -31,10 +50,35 @@
                     <navigationItem key="navigationItem" title="News" id="JRT-zn-xjN">
                         <barButtonItem key="backBarButtonItem" title=" " id="41t-mU-8aj"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newsTableView" destination="6FN-Mj-UWi" id="4Dq-Sw-w3h"/>
+                        <outlet property="tableView" destination="6FN-Mj-UWi" id="BLn-Ta-E2S"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGy-lK-qe5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1296" y="-1231"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Cul-Ip-e17">
+            <objects>
+                <viewController id="Deh-dZ-Gdz" customClass="MSDetailSongsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q7X-hy-t5R"/>
+                        <viewControllerLayoutGuide type="bottom" id="gAf-B7-eOz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oZC-sL-Jp4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="UzL-Vq-RMI">
+                        <barButtonItem key="rightBarButtonItem" image="share button" id="Pir-v5-aZ3"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRz-aT-fx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="-1231"/>
         </scene>
         <!--About VC-->
         <scene sceneID="q7b-GC-Y0n">
@@ -170,5 +214,6 @@
         <image name="about_item" width="22" height="22"/>
         <image name="favorites_item" width="22" height="22"/>
         <image name="news_item" width="22" height="22"/>
+        <image name="share button" width="22" height="22"/>
     </resources>
 </document>
