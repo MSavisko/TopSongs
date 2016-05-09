@@ -190,10 +190,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="nwh-r0-jFv">
                         <barButtonItem key="backBarButtonItem" title=" " id="CMb-Ch-wPK"/>
-                        <barButtonItem key="rightBarButtonItem" image="share button" id="Bkc-7r-rY1"/>
+                        <barButtonItem key="rightBarButtonItem" image="share button" id="Bkc-7r-rY1">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="wpm-Te-0Uc" id="8nH-IU-KKj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="shareButton" destination="Bkc-7r-rY1" id="XAk-DL-4Bp"/>
                         <outlet property="songImageView" destination="fi2-I1-kwR" id="4YV-cB-YcP"/>
                     </connections>
                 </tableViewController>
