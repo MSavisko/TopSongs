@@ -9,8 +9,9 @@
 #import "MSSongDetailTVC.h"
 #import "AFNetworking.h"
 #import <Social/Social.h>
+#import <MessageUI/MessageUI.h>
 
-@interface MSSongDetailTVC () <UIActionSheetDelegate, UIAlertViewDelegate>
+@interface MSSongDetailTVC () <UIActionSheetDelegate, UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
 @property (strong, nonatomic) NSArray *songItems;
 @property (weak, nonatomic) IBOutlet UIImageView *songImageView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
@@ -85,11 +86,17 @@
 #pragma mark - UIActionSheetDelegate
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) { //Twitter
-        if ([self stringResultTwitter].length > 116) {
+        if ([self stringResultForShare].length > 116) {
             [self showAlertWithMessage:@"The result is too long to send the tweet. You will need to manually cut it!" tag:100];
         } else {
             [self shareWithTwitter];
         }
+    }
+    if (buttonIndex == 1) { //Facebook
+        [self shareWithFacebook];
+    }
+    if (buttonIndex == 2) {
+        [self shareWithEmail]; //Email
     }
 }
 
@@ -98,9 +105,6 @@
     if (alertView.tag == 100) {
         [self shareWithTwitter];
     }
-    if (alertView.tag == 200) {
-        [self shareWithFacebook];
-    }
 }
 
 #pragma mark - ShareMethods
@@ -108,7 +112,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweet setInitialText:[self stringResultTwitter]];
+        [tweet setInitialText:[self stringResultForShare]];
         NSData *data = [NSData dataWithContentsOfURL:self.song.imagePath];
         UIImage *image = [[UIImage alloc]initWithData:data];
         [tweet addImage:image];
@@ -127,7 +131,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
                                                         message:@"Twitter integration is not available. A Twitter account must be set up on your device."
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
@@ -137,12 +141,50 @@
 }
 
 - (void) shareWithFacebook {
-    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *post = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [post setInitialText:[self stringResultForShare]];
+        NSData *data = [NSData dataWithContentsOfURL:self.song.imagePath];
+        UIImage *image = [[UIImage alloc]initWithData:data];
+        [post addImage:image];
+        [post addURL:self.song.url];
+        [post setCompletionHandler:^(SLComposeViewControllerResult result)
+         {
+             if (result == SLComposeViewControllerResultCancelled)
+             {
+                 //The user cancelled
+             }
+             else if (result == SLComposeViewControllerResultDone)
+             {
+                 //The user sent the post
+             }
+         }];
+        [self presentViewController:post animated:YES completion:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Facebook integration is not available. A Facebook account must be set up on your device."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void) shareWithEmail {
+    NSString *emailTitle = [NSString stringWithFormat:@"Top Songs App. %@", self.song.title];
+    NSString *messageBody = [NSString stringWithFormat:@"%@Link: %@", [self stringResultForShare], self.song.url];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"stowyn@gmail.com"];
+    MFMailComposeViewController *email = [[MFMailComposeViewController alloc] init];
+    email.mailComposeDelegate = self;
+    [email setSubject:emailTitle];
+    [email setMessageBody:messageBody isHTML:YES];
+    [email setToRecipients:toRecipents];
+    [self presentViewController:email animated:YES completion:NULL];
 }
 
 #pragma mark - PresentationDataMethod
-- (NSString*) stringResultTwitter {
-    NSString *result = [NSString stringWithFormat:@"Artist: %@\nTrack name: %@\nCollection name: %@\nReleased: %@\nPrice: %@", self.song.artist, self.song.name, self.song.collectionName, self.song.releaseDate, self.song.price];
+- (NSString*) stringResultForShare {
+    NSString *result = [NSString stringWithFormat:@"Artist: %@\nTrack name: %@\nCollection name: %@\nReleased: %@\nPrice: %@\n", self.song.artist, self.song.name, self.song.collectionName, self.song.releaseDate, self.song.price];
     return result;
 }
 

@@ -18,6 +18,7 @@
 		925F91601CDF9FB600E7B133 /* MSSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F915F1CDF9FB600E7B133 /* MSSong.m */; };
 		925F91691CDFCF2100E7B133 /* MSSongDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F91681CDFCF2100E7B133 /* MSSongDetailTVC.m */; };
 		927F8C131CE0BEE900B9B432 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927F8C121CE0BEE900B9B432 /* Social.framework */; };
+		927F8C151CE0CD0F00B9B432 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927F8C141CE0CD0F00B9B432 /* MessageUI.framework */; };
 		974C7AE6D569CE2E9E5B5C54 /* libPods-Top Songs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C04921BE3625F4EA969F08A /* libPods-Top Songs.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		925F91671CDFCF2100E7B133 /* MSSongDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSongDetailTVC.h; path = ViewController/MSSongDetailTVC.h; sourceTree = "<group>"; };
 		925F91681CDFCF2100E7B133 /* MSSongDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSongDetailTVC.m; path = ViewController/MSSongDetailTVC.m; sourceTree = "<group>"; };
 		927F8C121CE0BEE900B9B432 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		927F8C141CE0CD0F00B9B432 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927F8C151CE0CD0F00B9B432 /* MessageUI.framework in Frameworks */,
 				927F8C131CE0BEE900B9B432 /* Social.framework in Frameworks */,
 				974C7AE6D569CE2E9E5B5C54 /* libPods-Top Songs.a in Frameworks */,
 			);
@@ -137,6 +140,7 @@
 		F99AA4CCA2073CF4A874D646 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				927F8C141CE0CD0F00B9B432 /* MessageUI.framework */,
 				927F8C121CE0BEE900B9B432 /* Social.framework */,
 				7C04921BE3625F4EA969F08A /* libPods-Top Songs.a */,
 			);
