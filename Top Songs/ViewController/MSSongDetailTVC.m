@@ -233,7 +233,7 @@
                                                                       return [documentsDirectoryURL URLByAppendingPathComponent:fileName];
                                                                   }
                                                             completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-                                                                NSLog(@"File downloaded to: %@", filePath);
+                                                                //NSLog(@"File downloaded to: %@", filePath);
                                                                 NSData *data = [NSData dataWithContentsOfURL:filePath];
                                                                 UIImage *image = [[UIImage alloc]initWithData:data];
                                                                 self.songImageView.image = image;
