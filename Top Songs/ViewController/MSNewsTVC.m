@@ -12,8 +12,9 @@
 #import "MSSong.h"
 
 #import "AFNetworking.h"
+#import "MGSwipeTableCell.h"
 
-@interface MSNewsTVC () <NSXMLParserDelegate>
+@interface MSNewsTVC () <NSXMLParserDelegate, MGSwipeTableCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *newsTableView;
 @property (strong, nonatomic) NSXMLParser *xmlParser;
 @property (strong, nonatomic) NSMutableArray *arrNewsData;
@@ -84,18 +85,25 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
+    MGSwipeTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NewsCell"];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NewsCell"];
+        //cell.accessoryType = UITableViewCellAccessoryNone;
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     MSSong *song = self.songs[indexPath.row];
     cell.textLabel.text = song.title;
     cell.detailTextLabel.text = song.releaseDate;
+    cell.delegate = self;
+    
+    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"star_button.png"] backgroundColor:[UIColor colorWithRed:52.0f/255.0f green:152.0f/255.0f blue:219.0f/255.0f alpha:1.0f]]];
+    cell.rightSwipeSettings.transition = MGSwipeStateSwipingRightToLeft;
     
     return cell;
 }
+
+#pragma mark - MGSwipeTableCellDelegate
+
 
 #pragma mark - NSXMLParserDelegate
 -(void) parserDidStartDocument:(NSXMLParser *)parser {
