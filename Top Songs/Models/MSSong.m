@@ -21,7 +21,7 @@
         _imageUrl = [[NSURL alloc]initWithString:dict[@"imageUrl"]];
         
         
-        NSString *name = [_title substringToIndex:[_title length] - [_artist length]];
+        NSString *name = [_title substringToIndex:[_title length] - [_artist length] - 3];
         _name = name;
     }
     return self;

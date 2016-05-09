@@ -71,7 +71,7 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="210"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fi2-I1-kwR">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song image sync" translatesAutoresizingMaskIntoConstraints="NO" id="fi2-I1-kwR">
                                     <rect key="frame" x="215" y="20" width="170" height="170"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="170" id="371-q2-SBl"/>
@@ -337,6 +337,7 @@
         <image name="news_item" width="22" height="22"/>
         <image name="share button" width="22" height="22"/>
         <image name="song collection name" width="20" height="20"/>
+        <image name="song image sync" width="85" height="85"/>
         <image name="song price" width="20" height="20"/>
         <image name="song release date" width="20" height="20"/>
         <image name="song title" width="20" height="20"/>

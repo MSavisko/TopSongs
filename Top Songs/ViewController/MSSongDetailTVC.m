@@ -52,7 +52,7 @@
     
     if ([cell.reuseIdentifier isEqualToString:@"title"]) {
         UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:100];
-        [titleLabel setText:self.song.title];
+        [titleLabel setText:self.song.name];
     }
     if ([cell.reuseIdentifier isEqualToString:@"collectionName"]) {
         UILabel *collectionLabel = (UILabel *)[cell.contentView viewWithTag:200];
