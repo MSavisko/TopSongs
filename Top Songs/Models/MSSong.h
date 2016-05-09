@@ -18,6 +18,7 @@
 @property (strong, readonly, nonatomic) NSURL *url;
 @property (strong, readonly, nonatomic) NSURL *imageUrl;
 @property (strong, readonly, nonatomic) NSURL *imagePath;
+@property (nonatomic) BOOL isFavorite;
 
 - (instancetype) initWithDict:(NSDictionary*)dict;
 - (void) setImagePath:(NSURL *)imagePath;

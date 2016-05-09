@@ -23,6 +23,7 @@
         NSString *name = [_title substringToIndex:[_title length] - [_artist length] - 3];
         _name = name;
         _imagePath = nil;
+        _isFavorite = NO;
     }
     return self;
 }

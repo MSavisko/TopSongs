@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSXMLParser *xmlParser;
 @property (strong, nonatomic) NSMutableArray *arrNewsData;
 @property (strong, nonatomic) NSMutableArray *songs;
+@property (strong, nonatomic) NSMutableArray *favoriteSongs;
 @property (strong, nonatomic) NSMutableDictionary *dictTempDataStorage;
 @property (strong, nonatomic) NSMutableString *foundValue;
 @property (strong, nonatomic) NSString *currentElement;
@@ -30,6 +31,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self loadSongsListToDict];
+    self.favoriteSongs = [[NSMutableArray alloc]init];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -88,8 +90,6 @@
     MGSwipeTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     if (cell == nil) {
         cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NewsCell"];
-        //cell.accessoryType = UITableViewCellAccessoryNone;
-        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     MSSong *song = self.songs[indexPath.row];
     cell.textLabel.text = song.title;
@@ -103,7 +103,19 @@
 }
 
 #pragma mark - MGSwipeTableCellDelegate
-
+-(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    MSSong *song = self.songs[indexPath.row];
+    if (song.isFavorite) {
+        song.isFavorite = NO;
+        [self.songs replaceObjectAtIndex:indexPath.row withObject:song];
+    } else {
+        song.isFavorite = YES;
+        [self.songs replaceObjectAtIndex:indexPath.row withObject:song];
+    }
+    return YES;
+}
 
 #pragma mark - NSXMLParserDelegate
 -(void) parserDidStartDocument:(NSXMLParser *)parser {
