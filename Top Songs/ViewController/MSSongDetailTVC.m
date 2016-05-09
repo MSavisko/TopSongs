@@ -100,6 +100,31 @@
     }
 }
 
+#pragma mark - MFMailComposeViewControllerDelegate
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            //Mail cancelled
+            break;
+        case MFMailComposeResultSaved:
+            //Mail saved
+            break;
+        case MFMailComposeResultSent:
+            //Mail sent
+            break;
+        case MFMailComposeResultFailed:
+            //NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 100) {
@@ -141,6 +166,8 @@
 }
 
 - (void) shareWithFacebook {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [self stringResultForShare];
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *post = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         [post setInitialText:[self stringResultForShare]];

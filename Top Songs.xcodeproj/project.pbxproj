@@ -181,7 +181,7 @@
 				TargetAttributes = {
 					925F91351CDE59E200E7B133 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4KQC9K68AM;
+						DevelopmentTeam = AVF8Q9TB9C;
 					};
 				};
 			};
@@ -390,11 +390,14 @@
 			baseConfigurationReference = 754D90D913E48C63F2CE4677 /* Pods-Top Songs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Top Songs/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MSavisko.Top-Songs";
 				PRODUCT_NAME = "Top Songs";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -403,11 +406,14 @@
 			baseConfigurationReference = 37CB629DA535FB91B0B63F27 /* Pods-Top Songs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Top Songs/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MSavisko.Top-Songs";
 				PRODUCT_NAME = "Top Songs";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
