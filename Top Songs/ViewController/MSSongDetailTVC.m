@@ -236,10 +236,12 @@
                                                                 //NSLog(@"File downloaded to: %@", filePath);
                                                                 NSData *data = [NSData dataWithContentsOfURL:filePath];
                                                                 UIImage *image = [[UIImage alloc]initWithData:data];
-                                                                self.songImageView.image = image;
-                                                                [self.songImageView setNeedsDisplay];
                                                                 [self.song setImagePath:filePath];
                                                                 
+                                                                dispatch_async(dispatch_get_main_queue(), ^{
+                                                                    self.songImageView.image = image;
+                                                                    [self.songImageView setNeedsDisplay];
+                                                                });
                                                             }];
     [downloadTask resume];
 }
