@@ -120,8 +120,6 @@
         default:
             break;
     }
-    
-    // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -200,7 +198,7 @@
 - (void) shareWithEmail {
     NSString *emailTitle = [NSString stringWithFormat:@"Top Songs App. %@", self.song.title];
     NSString *messageBody = [NSString stringWithFormat:@"%@Link: %@", [self stringResultForShare], self.song.url];
-    NSArray *toRecipents = [NSArray arrayWithObject:@"stowyn@gmail.com"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@""];
     MFMailComposeViewController *email = [[MFMailComposeViewController alloc] init];
     email.mailComposeDelegate = self;
     [email setSubject:emailTitle];

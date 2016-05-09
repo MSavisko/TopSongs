@@ -247,6 +247,9 @@
                                                         <rect key="frame" x="87" y="250" width="130" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Send feedback"/>
+                                                        <connections>
+                                                            <action selector="sendFeedbackButtonPressed:" destination="rtN-lI-Nda" eventType="touchUpInside" id="Yo8-Rq-jHF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,6 +293,9 @@
                     <navigationItem key="navigationItem" title="About" id="YQz-VG-auh">
                         <barButtonItem key="backBarButtonItem" title=" " id="U4W-Fv-H6V"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sendFeedbackButton" destination="1TN-oO-JAI" id="GEx-Ju-Qb2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT5-KS-lK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
