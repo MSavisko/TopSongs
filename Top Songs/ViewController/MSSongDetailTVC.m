@@ -11,10 +11,6 @@
 @interface MSSongDetailTVC ()
 @property (strong, nonatomic) NSArray *songData;
 @property (strong, nonatomic) NSArray *songItems;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *collectionNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *songImageView;
 
 @end
@@ -25,11 +21,6 @@
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.title = self.song.artist;
-    self.priceLabel.text = self.song.price;
-    self.releaseDateLabel.text = self.song.releaseDate;
-    self.collectionNameLabel.text = self.song.collectionName;
-    self.titleNameLabel.text = self.song.title;
-    //self.songData = @[self.song.title, self.song.collectionName, self.song.releaseDate, self.song.price, self.song.url];
     self.songItems = @[@"title", @"collectionName", @"releaseDate", @"price", @"url"];
     
 }
