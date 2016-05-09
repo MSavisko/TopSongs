@@ -20,11 +20,15 @@
         _url = [[NSURL alloc]initWithString:dict[@"url"]];
         _imageUrl = [[NSURL alloc]initWithString:dict[@"imageUrl"]];
         
-        
         NSString *name = [_title substringToIndex:[_title length] - [_artist length] - 3];
         _name = name;
+        _imagePath = nil;
     }
     return self;
+}
+
+- (void) setImagePath:(NSURL *)imagePath {
+    _imagePath = imagePath;
 }
 
 @end

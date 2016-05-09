@@ -17,7 +17,9 @@
 @property (strong, readonly, nonatomic) NSString *price;
 @property (strong, readonly, nonatomic) NSURL *url;
 @property (strong, readonly, nonatomic) NSURL *imageUrl;
+@property (strong, readonly, nonatomic) NSURL *imagePath;
 
 - (instancetype) initWithDict:(NSDictionary*)dict;
+- (void) setImagePath:(NSURL *)imagePath;
 
 @end
