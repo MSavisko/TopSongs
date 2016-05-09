@@ -30,7 +30,7 @@
     self.collectionNameLabel.text = self.song.collectionName;
     self.titleNameLabel.text = self.song.title;
     //self.songData = @[self.song.title, self.song.collectionName, self.song.releaseDate, self.song.price, self.song.url];
-    self.songItems = @[@"name", @"collectionName", @"releaseDate", @"price", @"url"];
+    self.songItems = @[@"title", @"collectionName", @"releaseDate", @"price", @"url"];
     
 }
 
@@ -40,7 +40,6 @@
         [[UIApplication sharedApplication] openURL:self.song.url];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 #pragma mark - TableViewDataSource
@@ -55,7 +54,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *CellIdentifier = [self.songItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
+    
+    if ([cell.reuseIdentifier isEqualToString:@"title"]) {
+        UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:100];
+        [titleLabel setText:self.song.title];
+    }
+    if ([cell.reuseIdentifier isEqualToString:@"collectionName"]) {
+        UILabel *collectionLabel = (UILabel *)[cell.contentView viewWithTag:200];
+        [collectionLabel setText:self.song.collectionName];
+    }
+    if ([cell.reuseIdentifier isEqualToString:@"releaseDate"]) {
+        UILabel *dateLabel = (UILabel *)[cell.contentView viewWithTag:300];
+        [dateLabel setText:self.song.releaseDate];
+    }
+    if ([cell.reuseIdentifier isEqualToString:@"price"]) {
+        UILabel *dateLabel = (UILabel *)[cell.contentView viewWithTag:400];
+        [dateLabel setText:self.song.price];
+    }
     if ([cell.reuseIdentifier isEqualToString:@"url"]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
