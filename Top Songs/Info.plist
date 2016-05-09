@@ -22,6 +22,32 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>is1.mzstatic.com</key>
+			<string></string>
+			<key>is2.mzstatic.com</key>
+			<string></string>
+			<key>is3.mzstatic.com</key>
+			<string></string>
+			<key>is4.mzstatic.com</key>
+			<string></string>
+			<key>is5.mzstatic.com</key>
+			<string></string>
+			<key>is6.mzstatic.com</key>
+			<string></string>
+			<key>is7.mzstatic.com</key>
+			<string></string>
+			<key>is8.mzstatic.com</key>
+			<string></string>
+			<key>is9.mzstatic.com</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

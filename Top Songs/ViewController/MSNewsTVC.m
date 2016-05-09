@@ -52,7 +52,7 @@
         self.xmlParser.delegate = self;
         self.foundValue = [[NSMutableString alloc] init];
         [self.xmlParser parse];
-        NSLog(@"Array: %@", self.arrNewsData);
+        //NSLog(@"Array: %@", self.arrNewsData);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //Fail
         NSLog(@"Error: %@", error);

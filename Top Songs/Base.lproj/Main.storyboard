@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--News TVC-->
@@ -94,32 +93,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song title" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-fD-dGc">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="song title" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-fD-dGc">
                                             <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="76M-dq-Aet"/>
-                                                <constraint firstAttribute="height" constant="40" id="X8d-hi-Abd"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-v4-w3k">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-v4-w3k">
                                             <rect key="frame" x="64" y="11" width="528" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="l6d-fi-1dH"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="JQZ-fD-dGc" firstAttribute="leading" secondItem="R7o-XS-sBm" secondAttribute="leading" constant="16" id="5Lb-Ah-ifL"/>
-                                        <constraint firstAttribute="bottom" secondItem="1dR-v4-w3k" secondAttribute="bottom" constant="11.5" id="Gf5-sa-6y3"/>
-                                        <constraint firstAttribute="trailing" secondItem="1dR-v4-w3k" secondAttribute="trailing" constant="8" id="UWl-HT-ZSd"/>
-                                        <constraint firstItem="1dR-v4-w3k" firstAttribute="top" secondItem="R7o-XS-sBm" secondAttribute="top" constant="11" id="eOW-xx-gMV"/>
-                                        <constraint firstAttribute="bottom" secondItem="JQZ-fD-dGc" secondAttribute="bottom" constant="1.5" id="jci-KP-WhB"/>
-                                        <constraint firstItem="1dR-v4-w3k" firstAttribute="leading" secondItem="JQZ-fD-dGc" secondAttribute="trailing" constant="8" id="uhB-tJ-6k0"/>
-                                        <constraint firstItem="JQZ-fD-dGc" firstAttribute="top" secondItem="R7o-XS-sBm" secondAttribute="top" constant="2" id="zla-NB-uqO"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="collectionName" id="9DS-Av-YIa">
@@ -129,32 +112,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song collection name" translatesAutoresizingMaskIntoConstraints="NO" id="02G-Ly-RU6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="song collection name" translatesAutoresizingMaskIntoConstraints="NO" id="02G-Ly-RU6">
                                             <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Uc4-KI-YcX"/>
-                                                <constraint firstAttribute="width" constant="40" id="yfB-dN-3QE"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMl-aG-uWz">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMl-aG-uWz">
                                             <rect key="frame" x="64" y="11" width="528" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="BO8-Gg-lK9"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="LMl-aG-uWz" firstAttribute="leading" secondItem="02G-Ly-RU6" secondAttribute="trailing" constant="8" id="3cs-Ux-m8w"/>
-                                        <constraint firstItem="02G-Ly-RU6" firstAttribute="top" secondItem="C3H-nv-IM3" secondAttribute="top" constant="2" id="8ce-jI-TZy"/>
-                                        <constraint firstAttribute="bottom" secondItem="02G-Ly-RU6" secondAttribute="bottom" constant="1.5" id="9mL-8k-ceI"/>
-                                        <constraint firstItem="LMl-aG-uWz" firstAttribute="top" secondItem="C3H-nv-IM3" secondAttribute="top" constant="11" id="AVu-iZ-Qe9"/>
-                                        <constraint firstAttribute="bottom" secondItem="LMl-aG-uWz" secondAttribute="bottom" constant="11.5" id="BlG-rk-H4y"/>
-                                        <constraint firstAttribute="trailing" secondItem="LMl-aG-uWz" secondAttribute="trailing" constant="8" id="NWw-JV-xnU"/>
-                                        <constraint firstItem="02G-Ly-RU6" firstAttribute="leading" secondItem="C3H-nv-IM3" secondAttribute="leading" constant="16" id="oEj-42-CJQ"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="releaseDate" id="eM3-7a-gYq">
@@ -164,32 +131,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song release date" translatesAutoresizingMaskIntoConstraints="NO" id="aAW-LO-zmf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="song release date" translatesAutoresizingMaskIntoConstraints="NO" id="aAW-LO-zmf">
                                             <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="PaM-yE-ENf"/>
-                                                <constraint firstAttribute="width" constant="40" id="zkc-9P-eDQ"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDf-Wn-iib">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDf-Wn-iib">
                                             <rect key="frame" x="64" y="11" width="528" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Izc-2x-lIH"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="JDf-Wn-iib" secondAttribute="bottom" constant="11.5" id="9c1-Ug-boo"/>
-                                        <constraint firstItem="aAW-LO-zmf" firstAttribute="leading" secondItem="MVI-cb-s6o" secondAttribute="leading" constant="16" id="DeF-NQ-dwz"/>
-                                        <constraint firstItem="JDf-Wn-iib" firstAttribute="top" secondItem="MVI-cb-s6o" secondAttribute="top" constant="11" id="FYd-pg-1Zh"/>
-                                        <constraint firstItem="aAW-LO-zmf" firstAttribute="top" secondItem="MVI-cb-s6o" secondAttribute="top" constant="2" id="SCc-xn-eJJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="JDf-Wn-iib" secondAttribute="trailing" constant="8" id="bbj-YO-EPC"/>
-                                        <constraint firstItem="JDf-Wn-iib" firstAttribute="leading" secondItem="aAW-LO-zmf" secondAttribute="trailing" constant="8" id="fyi-7j-eXI"/>
-                                        <constraint firstAttribute="bottom" secondItem="aAW-LO-zmf" secondAttribute="bottom" constant="1.5" id="vuT-cK-Gu3"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="price" id="5ni-65-e3y">
@@ -199,32 +150,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song price" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-fQ-3yK">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="song price" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-fQ-3yK">
                                             <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="YC5-ut-fm4"/>
-                                                <constraint firstAttribute="height" constant="40" id="laA-ed-eFw"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmM-rw-aog">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmM-rw-aog">
                                             <rect key="frame" x="64" y="11" width="528" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="b3l-WX-ny8"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="aNJ-fQ-3yK" firstAttribute="top" secondItem="I8x-YE-OIP" secondAttribute="top" constant="2" id="2C0-t9-E5U"/>
-                                        <constraint firstAttribute="trailing" secondItem="tmM-rw-aog" secondAttribute="trailing" constant="8" id="AgQ-wT-sn6"/>
-                                        <constraint firstAttribute="bottom" secondItem="aNJ-fQ-3yK" secondAttribute="bottom" constant="1.5" id="Dgi-RA-DCd"/>
-                                        <constraint firstItem="aNJ-fQ-3yK" firstAttribute="leading" secondItem="I8x-YE-OIP" secondAttribute="leading" constant="16" id="R1I-B7-ugP"/>
-                                        <constraint firstAttribute="bottom" secondItem="tmM-rw-aog" secondAttribute="bottom" constant="11.5" id="aOb-3S-M5F"/>
-                                        <constraint firstItem="tmM-rw-aog" firstAttribute="leading" secondItem="aNJ-fQ-3yK" secondAttribute="trailing" constant="8" id="pkz-j9-sdW"/>
-                                        <constraint firstItem="tmM-rw-aog" firstAttribute="top" secondItem="I8x-YE-OIP" secondAttribute="top" constant="11" id="r1m-Vo-0NO"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="url" id="KDb-by-luO">
@@ -234,32 +169,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song url" translatesAutoresizingMaskIntoConstraints="NO" id="Tbv-vM-toq">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="song url" translatesAutoresizingMaskIntoConstraints="NO" id="Tbv-vM-toq">
                                             <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="aXo-WW-8WQ"/>
-                                                <constraint firstAttribute="height" constant="40" id="qRG-AS-bgb"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iTunes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-zW-Gec">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iTunes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-zW-Gec">
                                             <rect key="frame" x="64" y="11" width="160" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="160" id="2y7-7b-GIX"/>
-                                                <constraint firstAttribute="height" constant="21" id="xAj-WN-bXS"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Tbv-vM-toq" firstAttribute="leading" secondItem="oOb-hW-dKn" secondAttribute="leading" constant="16" id="3tY-5o-DiJ"/>
-                                        <constraint firstItem="eqf-zW-Gec" firstAttribute="top" secondItem="oOb-hW-dKn" secondAttribute="topMargin" constant="3" id="8nb-lR-N0h"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="eqf-zW-Gec" secondAttribute="bottom" constant="3.5" id="BuW-iJ-E5W"/>
-                                        <constraint firstAttribute="bottom" secondItem="Tbv-vM-toq" secondAttribute="bottom" constant="1.5" id="Ub1-C1-xF8"/>
-                                        <constraint firstItem="eqf-zW-Gec" firstAttribute="leading" secondItem="Tbv-vM-toq" secondAttribute="trailing" constant="8" id="xcU-2w-SeX"/>
-                                        <constraint firstItem="Tbv-vM-toq" firstAttribute="top" secondItem="oOb-hW-dKn" secondAttribute="top" constant="2" id="zTW-uf-i6P"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
