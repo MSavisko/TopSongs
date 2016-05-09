@@ -209,7 +209,7 @@
         <!--About VC-->
         <scene sceneID="q7b-GC-Y0n">
             <objects>
-                <viewController title="About VC" id="rtN-lI-Nda" customClass="MSAboutVC" sceneMemberID="viewController">
+                <viewController title="About VC" automaticallyAdjustsScrollViewInsets="NO" id="rtN-lI-Nda" customClass="MSAboutVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1sn-AJ-G3o"/>
                         <viewControllerLayoutGuide type="bottom" id="NdJ-eJ-jw5"/>
@@ -217,7 +217,75 @@
                     <view key="view" contentMode="scaleToFill" id="Jdz-5P-VCl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIv-I5-fLM">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dei-fd-nmd" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-UH-jiE">
+                                                <rect key="frame" x="148" y="104" width="304" height="280"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about image" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-8a-hsd">
+                                                        <rect key="frame" x="102" y="0.0" width="100" height="100"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3r-Dz-gaG">
+                                                        <rect key="frame" x="111" y="108" width="82" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="cy7-E2-hQu">
+                                                        <rect key="frame" x="32" y="132" width="240" height="110"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <string key="text">This app allows you collect top songs. Three touches and you can look details, add songs to favorites, buy them and share it on social networks.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-oO-JAI">
+                                                        <rect key="frame" x="87" y="250" width="130" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Send feedback"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="DRv-lv-4U8"/>
+                                                    <constraint firstAttribute="width" constant="304" id="TFT-k8-43R"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="kcS-UH-jiE" firstAttribute="centerX" secondItem="dei-fd-nmd" secondAttribute="centerX" id="Hxv-Fm-Mmd"/>
+                                            <constraint firstItem="kcS-UH-jiE" firstAttribute="centerY" secondItem="dei-fd-nmd" secondAttribute="centerY" id="vvm-qm-TAJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dei-fd-nmd" firstAttribute="leading" secondItem="BIv-I5-fLM" secondAttribute="leading" id="0o7-sM-mIq"/>
+                                    <constraint firstItem="dei-fd-nmd" firstAttribute="centerY" secondItem="BIv-I5-fLM" secondAttribute="centerY" id="4qh-Pq-zbh"/>
+                                    <constraint firstItem="dei-fd-nmd" firstAttribute="centerX" secondItem="BIv-I5-fLM" secondAttribute="centerX" id="BRB-DS-ksj"/>
+                                    <constraint firstAttribute="trailing" secondItem="dei-fd-nmd" secondAttribute="trailing" id="DAd-Hq-lm1"/>
+                                    <constraint firstAttribute="bottom" secondItem="dei-fd-nmd" secondAttribute="bottom" id="oFw-iO-yV0"/>
+                                    <constraint firstItem="dei-fd-nmd" firstAttribute="top" secondItem="BIv-I5-fLM" secondAttribute="top" id="wHr-x8-77K"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dei-fd-nmd" firstAttribute="width" secondItem="Jdz-5P-VCl" secondAttribute="width" id="bim-vP-gw3"/>
+                            <constraint firstItem="NdJ-eJ-jw5" firstAttribute="top" secondItem="BIv-I5-fLM" secondAttribute="bottom" id="e6O-cb-8Bu"/>
+                            <constraint firstAttribute="trailing" secondItem="BIv-I5-fLM" secondAttribute="trailing" id="pqR-57-dSh"/>
+                            <constraint firstItem="BIv-I5-fLM" firstAttribute="top" secondItem="1sn-AJ-G3o" secondAttribute="bottom" id="shF-y7-xiD"/>
+                            <constraint firstItem="BIv-I5-fLM" firstAttribute="leading" secondItem="Jdz-5P-VCl" secondAttribute="leading" id="uGC-5K-fIY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bim-vP-gw3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="YQz-VG-auh">
                         <barButtonItem key="backBarButtonItem" title=" " id="U4W-Fv-H6V"/>
@@ -337,6 +405,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about image" width="50" height="50"/>
         <image name="about_item" width="22" height="22"/>
         <image name="favorites_item" width="22" height="22"/>
         <image name="news_item" width="22" height="22"/>

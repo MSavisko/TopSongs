@@ -398,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MSavisko.Top-Songs";
 				PRODUCT_NAME = "Top Songs";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MSavisko.Top-Songs";
 				PRODUCT_NAME = "Top Songs";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
