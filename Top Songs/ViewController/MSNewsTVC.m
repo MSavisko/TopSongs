@@ -13,6 +13,7 @@
 
 #import "AFNetworking.h"
 #import "MGSwipeTableCell.h"
+#import "MBProgressHUD.h"
 
 @interface MSNewsTVC () <NSXMLParserDelegate, MGSwipeTableCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *newsTableView;
@@ -39,42 +40,6 @@
     MSSong *song = [[MSSong alloc]initWithDict:self.arrNewsData[indexPath.row]];
     MSSongDetailTVC *detailTVC = segue.destinationViewController;
     detailTVC.song = song;
-}
-
-#pragma mark - Helper Methods
-- (void) loadSongsListToDict {
-    NSURL *url = [NSURL URLWithString:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml"];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes =  [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/atom+xml"];
-    
-    [manager GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //Success
-        self.xmlParser = [[NSXMLParser alloc] init];
-        self.xmlParser = (NSXMLParser*)responseObject;
-        self.xmlParser.delegate = self;
-        self.foundValue = [[NSMutableString alloc] init];
-        [self.xmlParser parse];
-        //NSLog(@"Array: %@", self.arrNewsData);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        //Fail
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                        message:@"No internet connection. Please, check Cellular settings."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        //NSLog(@"Error: %@", error);
-    }];
-}
-
-- (void) makeSongsArray {
-    self.songs = [[NSMutableArray alloc]init];
-    for (int i = 0; i < self.arrNewsData.count; i++) {
-        MSSong *song = [[MSSong alloc]initWithDict:self.arrNewsData[i]];
-        [self.songs addObject:song];
-    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -110,9 +75,11 @@
     if (song.isFavorite) {
         song.isFavorite = NO;
         [self.songs replaceObjectAtIndex:indexPath.row withObject:song];
+        [self showHudUnFavorites];
     } else {
         song.isFavorite = YES;
         [self.songs replaceObjectAtIndex:indexPath.row withObject:song];
+        [self showHudFavorites];
     }
     return YES;
 }
@@ -172,6 +139,61 @@
 
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     [self.foundValue appendString:string];
+}
+
+#pragma mark - Helper Methods
+- (void) loadSongsListToDict {
+    NSURL *url = [NSURL URLWithString:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml"];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes =  [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/atom+xml"];
+    
+    [manager GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //Success
+        self.xmlParser = [[NSXMLParser alloc] init];
+        self.xmlParser = (NSXMLParser*)responseObject;
+        self.xmlParser.delegate = self;
+        self.foundValue = [[NSMutableString alloc] init];
+        [self.xmlParser parse];
+        //NSLog(@"Array: %@", self.arrNewsData);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //Fail
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:@"No internet connection. Please, check Cellular settings."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        //NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void) makeSongsArray {
+    self.songs = [[NSMutableArray alloc]init];
+    for (int i = 0; i < self.arrNewsData.count; i++) {
+        MSSong *song = [[MSSong alloc]initWithDict:self.arrNewsData[i]];
+        [self.songs addObject:song];
+    }
+}
+
+#pragma mark - MBProgressHUDMethod
+- (void) showHudFavorites {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.labelText = @"Add to Favorites";
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    });
+}
+
+- (void) showHudUnFavorites {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.labelText = @"Delete from Favorites";
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    });
 }
 
 @end
