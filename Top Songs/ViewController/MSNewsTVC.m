@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *newsTableView;
 @property (strong, nonatomic) NSXMLParser *xmlParser;
 @property (strong, nonatomic) NSMutableArray *arrNewsData;
+@property (strong, nonatomic) NSMutableArray *songs;
 @property (strong, nonatomic) NSMutableDictionary *dictTempDataStorage;
 @property (strong, nonatomic) NSMutableString *foundValue;
 @property (strong, nonatomic) NSString *currentElement;
@@ -27,7 +28,7 @@
 #pragma mark - UITableViewController
 - (void) viewDidLoad {
     [super viewDidLoad];
-    [self loadSongsList];
+    [self loadSongsListToDict];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -38,7 +39,7 @@
 }
 
 #pragma mark - Helper Methods
-- (void) loadSongsList {
+- (void) loadSongsListToDict {
     NSURL *url = [NSURL URLWithString:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -55,8 +56,22 @@
         //NSLog(@"Array: %@", self.arrNewsData);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //Fail
-        NSLog(@"Error: %@", error);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:@"No internet connection. Please, check Cellular settings."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        //NSLog(@"Error: %@", error);
     }];
+}
+
+- (void) makeSongsArray {
+    self.songs = [[NSMutableArray alloc]init];
+    for (int i = 0; i < self.arrNewsData.count; i++) {
+        MSSong *song = [[MSSong alloc]initWithDict:self.arrNewsData[i]];
+        [self.songs addObject:song];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -75,9 +90,9 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    cell.textLabel.text = [[self.arrNewsData objectAtIndex:indexPath.row] objectForKey:@"title"];
-    cell.detailTextLabel.text = [[self.arrNewsData objectAtIndex:indexPath.row] objectForKey:@"releaseDate"];
+    MSSong *song = self.songs[indexPath.row];
+    cell.textLabel.text = song.title;
+    cell.detailTextLabel.text = song.releaseDate;
     
     return cell;
 }
@@ -89,6 +104,7 @@
 
 -(void) parserDidEndDocument:(NSXMLParser *)parser {
     [self.newsTableView reloadData];
+    [self makeSongsArray];
 }
 
 -(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -137,6 +153,5 @@
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     [self.foundValue appendString:string];
 }
-
 
 @end
